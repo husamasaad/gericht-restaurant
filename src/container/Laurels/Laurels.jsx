@@ -27,7 +27,7 @@ const Laurels = () => (
       </Fade>
       <Fade>
       <div className="app__laurels_awards">
-        {data.awards.map((award) => (
+        {data.map((award) => (
             <AwardCard award ={award} key={award.title} />
           ))}
       </div>

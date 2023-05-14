@@ -1,29 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-import { images, data } from '../../constants';
+import { images } from '../../constants';
 import { SubHeading, MenuItem } from '../../components';
 
 import './SpecialMenu.css';
-import { client } from '../../client';
 import { Slide } from 'react-awesome-reveal';
 
-const SpecialMenu = () => {
-  
-  const [menuItems, setMenuItems] = useState([]);
-
-  const [loading, setLoading] = useState(true);
-  
-  useEffect(() => {
-    const query = `*[_type == 'today-special']`;
-
-    client.fetch(query).then(data => {
-      setMenuItems(data);
-      setLoading(false);
-    }).catch(error => {
-      console.error(error);
-    });
-  
-  }, []);
+const SpecialMenu = ({ menuItems }) => {
   
   return (
   <div className='app__specialMenu flex__center section__padding' id="menu">
