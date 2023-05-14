@@ -5,6 +5,7 @@ import { SubHeading, MenuItem } from '../../components';
 
 import './SpecialMenu.css';
 import { Slide } from 'react-awesome-reveal';
+import { Link } from 'react-router-dom';
 
 const SpecialMenu = ({ menuItems }) => {
   
@@ -45,7 +46,9 @@ const SpecialMenu = ({ menuItems }) => {
     </div>
 
     <div style={{ marginTop: '15px' }}>
-      <button type='button' className='custom__button'>View More</button>
+      <Link to='/menu'>
+        <button type='button' className='custom__button'>View More</button>
+      </Link>
     </div>
 
   </div>
